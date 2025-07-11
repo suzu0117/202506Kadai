@@ -1,10 +1,20 @@
 let products = [];
+let searchedProducts = [];
+let categoryProducts = [];
+let genderProducts = [];
+let priceProducts = [];
+
 fetch('./test.json')
     //読み込み成功
     .then(response => response.json())
     .then(data => {
         products = data;
+        searchedProducts = products;
+        categoryProducts = products;
+        genderProducts = products;
+        priceProducts = products;
         displayProducts(products);
+        console.log(searchedProducts,categoryProducts,genderProducts,priceProducts);
     })
     //読み込み失敗
     .catch(error => {
@@ -35,11 +45,14 @@ function displayProducts(items){
 document.getElementById('search').addEventListener('input', event =>{
     const keyword = event.target.value.toLowerCase(); //大文字を小文字に変換
     const selected = document.getElementById('category_buttons').querySelector('.active').dataset.category;
-    const filtered = products.filter(product => product.name.toLowerCase().includes(keyword)&&(selected === 'all'||product.category===selected));
-  
+    /*const filtered = products.filter(product => product.name.toLowerCase().includes(keyword)&&(selected === 'all'||product.category===selected));*/
+    searchedProducts = products.filter(product => product.name.toLowerCase().includes(keyword)&&(selected === 'all'||product.category===selected));
+    const filtered = products.filter(product =>
+        searchedProducts.includes(product)&&categoryProducts.includes(product)&&genderProducts.includes(product)&&priceProducts.includes(product)
+    )
     displayProducts(filtered);
-
 });
+
 
 //カテゴリ機能
 document.querySelectorAll('#category_buttons button').forEach(btn => {
@@ -49,16 +62,21 @@ document.querySelectorAll('#category_buttons button').forEach(btn => {
 
         const selected = btn.dataset.category;
         const all_products = document.querySelectorAll('.product');
-
-        all_products.forEach(p => {
+        categoryProducts = products.filter(product => product.category===selected||selected === 'all');
+        const filtered = products.filter(product =>
+            searchedProducts.includes(product)&&categoryProducts.includes(product)&&genderProducts.includes(product)&&priceProducts.includes(product)
+        )
+        displayProducts(filtered);
+        /*all_products.forEach(p => {
             if(selected === 'all' || p.dataset.category === selected){
                 p.style.display = 'block';
             } else {
                 p.style.display = 'none';
             }
-        });
+        });*/
     });
 });
+
 
 document.querySelectorAll('#gender_buttons button').forEach(btn => {
     btn.addEventListener('click',() =>{
@@ -67,22 +85,31 @@ document.querySelectorAll('#gender_buttons button').forEach(btn => {
 
         const selected = btn.dataset.category;
         const all_products = document.querySelectorAll('.product');
-
-        all_products.forEach(p => {
+        genderProducts = products.filter(product => product.gender===selected||selected === 'all');
+        const filtered = products.filter(product =>
+        searchedProducts.includes(product)&&categoryProducts.includes(product)&&genderProducts.includes(product)&&priceProducts.includes(product)
+            )
+        displayProducts(filtered);
+        /*all_products.forEach(p => {
             if(selected === 'all'||p.dataset.gender === selected||p.dataset.gender==='unisex' ){
                 p.style.display = 'block';
             } else {
                 p.style.display = 'none';
             }
-        });
+        });*/
 
     })
 })
+
 
 document.getElementById('price-filter-button').addEventListener('click',()=>{
     const min = document.getElementById('min').value;
     const max = document.getElementById('max').value;
     
-    const filtered = products.filter(product => product.price >= min && product.price <= max);
+    /*const filtered = products.filter(product => product.price >= min && product.price <= max);*/
+    priceProducts = products.filter(product => product.price >= min && product.price <= max);
+    const filtered = products.filter(product =>
+        searchedProducts.includes(product)&&categoryProducts.includes(product)&&genderProducts.includes(product)&&priceProducts.includes(product)
+    )
     displayProducts(filtered);
 })
