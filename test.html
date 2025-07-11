@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./test.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--検索窓-->
+    <input type="search" id="search" placeholder="商品名で検索">
+    <!--カテゴリ-->
+    <div id="category_buttons">
+        <button data-category="all" class="active">すべて</button>
+        <button data-category="tops">トップス</button>
+        <button data-category="bottoms">ボトムス</button>
+        <button data-category="accessories">アクセサリー</button>
+    </div>
+    <div id="gender_buttons">
+        <button data-category="all" class="active">ALL</button>
+        <button data-category="men">MEN</button>
+        <button data-category="women">WOMEN</button>
+        <button data-category="unisex">UNISEX</button>
+    </div>
+    <div>
+        <input type="number" id="min" placeholder="最小値" value="0">
+        <input type="number" id="max" placeholder="最大値" value="10000000">
+        <button id="price-filter-button">test</button>
+    </div>
+
+    <!--商品一覧-->
+    <div id="product_list" class="product_list">
+
+    </div>
+</body>
+<script src="./test.js"></script>
+</html>

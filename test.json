@@ -1,0 +1,98 @@
+[
+  {
+    "name": "リネンシャツ",
+    "image": "linen_shirt.jpg",
+    "price": 4900,
+    "release_date": "2025-06-01",
+    "category": "tops",
+    "gender": "men"
+  },
+  {
+    "name": "コットンパンツ",
+    "image": "cotton_pants.jpg",
+    "price": 5900,
+    "release_date": "2025-06-03",
+    "category": "bottoms",
+    "gender": "unisex"
+  },
+  {
+    "name": "麦わら帽子",
+    "image": "straw_hat.jpg",
+    "price": 2500,
+    "release_date": "2025-06-04",
+    "category": "accessories",
+    "gender": "women"
+  },
+  {
+    "name": "UVカットカーディガン",
+    "image": "uv_cardigan.jpg",
+    "price": 3900,
+    "release_date": "2025-06-05",
+    "category": "tops",
+    "gender": "unisex"
+  },
+  {
+    "name": "リラックスショートパンツ",
+    "image": "relax_shorts.jpg",
+    "price": 3200,
+    "release_date": "2025-06-06",
+    "category": "bottoms",
+    "gender": "men"
+  },
+  {
+    "name": "メッシュトートバッグ",
+    "image": "mesh_tote.jpg",
+    "price": 2800,
+    "release_date": "2025-06-07",
+    "category": "accessories",
+    "gender": "women"
+  },
+  {
+    "name": "オーガニックTシャツ",
+    "image": "organic_tshirt.jpg",
+    "price": 2900,
+    "release_date": "2025-06-08",
+    "category": "tops",
+    "gender": "unisex"
+  },
+  {
+    "name": "ロングスカート",
+    "image": "long_skirt.jpg",
+    "price": 4500,
+    "release_date": "2025-06-09",
+    "category": "bottoms",
+    "gender": "women"
+  },
+  {
+    "name": "ラフィアハット",
+    "image": "raffia_hat.jpg",
+    "price": 3300,
+    "release_date": "2025-06-10",
+    "category": "accessories",
+    "gender": "unisex"
+  },
+  {
+    "name": "シフォンブラウス",
+    "image": "chiffon_blouse.jpg",
+    "price": 5200,
+    "release_date": "2025-06-11",
+    "category": "tops",
+    "gender": "women"
+  },
+  {
+    "name": "デニムショートパンツ",
+    "image": "denim_shorts.jpg",
+    "price": 3600,
+    "release_date": "2025-06-12",
+    "category": "bottoms",
+    "gender": "men"
+  },
+  {
+    "name": "サマースリッパ",
+    "image": "summer_slippers.jpg",
+    "price": 1800,
+    "release_date": "2025-06-13",
+    "category": "accessories",
+    "gender": "unisex"
+  }
+]
